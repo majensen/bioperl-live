@@ -1,11 +1,11 @@
 language: perl
 perl:
   - "5.20"
-  - "5.18"
-  - "5.16"
-  - "5.14"
-  - "5.12"
-  - "5.10"
+#  - "5.18"
+#  - "5.16"
+#  - "5.14"
+#  - "5.12"
+#  - "5.10"
 
 env: PERL_CPANM_OPT="--notest --force --skip-satisfied"
 
@@ -14,7 +14,8 @@ install:
     - "sudo apt-get install libdb-dev graphviz libgd2-xpm-dev libxml2-dev 2>&1 | tail -n 4"
     #These are recommended or required Perl libraries:
     - "cpanm GD 2>&1 | tail -n 1"
-    - "cpanm HTML::TableExtract DBI Data::Stag DB_File 2>&1 | tail -n 1"
+    - "cpanm HTML::TableExtract DBI Data::Stag 2>&1 | tail -n 1"
+    - "cpanm DB_File 2>&1"
     - "cpanm DBD::mysql DBD::Pg DBD::SQLite 2>&1 | tail -n 1"
     - "cpanm Algorithm::Munkres Array::Compare Convert::Binary::C Error 2>&1 | tail -n 1"
     - "cpanm Graph SVG SVG::Graph GraphViz 2>&1 | tail -n 1"
